@@ -6,24 +6,26 @@
   <title>Citybikes application</title>
 </head>
 <body>
-    <div id="fillarit">
-      <label> Station:
-          <select id="stations">
-              <option value="-1"></option>
-          </select>
-      </label>
+  <div id="info">
+    <div id="wrapper">
       <div>
-        Amount of empty slots:
+        <label class="label">Station:</label>
+        <select id="stations">
+          <option value="-1"></option>
+        </select>
+      </div>
+      <div>
+        <label class="label">Amount of empty slots:</label>
         <span id="empty-slots"></span>
       </div>
       <div>
-        Amount of free bikes:
+        <label class="label">Amount of free bikes:</label>
         <span id="free-bikes"></span>
       </div>
     </div>
-    <div id="map">
-    </div>
-  </table>
-  <script src="./index.js"></script>
+  </div>
+  <div id="map"></div>
+</table>
+<script src="./index.js"></script>
 </body>
 </html>

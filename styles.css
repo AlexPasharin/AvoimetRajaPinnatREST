@@ -1,10 +1,24 @@
-table {
-  width: 50%;
-  margin: 20px auto;
-  border-collapse: collapse;
+#info {
+  padding: 20px;
+  background-color: lightblue;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-th, td {
-  text-align: center;
-  border: 1px solid;
+#wrapper{
+  visibility: hidden;
+}
+
+#loading{
+  display: none;
+}
+
+#wrapper > div{
+  margin: 5px 0;
+}
+
+.label{
+  font-weight: bold;
+  display: inline-block;
+  width: 15%;
 }
