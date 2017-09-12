@@ -9,16 +9,22 @@
   visibility: hidden;
 }
 
-#loading{
-  display: none;
-}
-
-#wrapper > div{
+#basic-info > div, #weather-info > div{
   margin: 5px 0;
 }
 
 .label{
   font-weight: bold;
   display: inline-block;
-  width: 15%;
+  width: 40%;
+}
+
+#basic-info, #weather-image-wrapper, #weather-info{
+  display: inline-block;
+  vertical-align: top;
+  width: 35%
+}
+
+#weather-image-wrapper{
+  width: 10%;
 }
