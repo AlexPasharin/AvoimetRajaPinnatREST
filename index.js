@@ -92,5 +92,5 @@ function showIcon(icon, captionTxt){
 
 function parseDestination(){
   var destination = document.getElementById('destination').value.trim()
-   return destination.split(/\s+/).join('+')
+   return destination.replace(/\s+/, '+')
 }
