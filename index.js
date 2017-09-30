@@ -40,12 +40,15 @@ xmlHttpWeather.onreadystatechange = function() {
 
 function bikeParser(stations){
   var select = document.getElementById('stations')
+  var form = document.getElementById('basic-info')
 
   stations.forEach((station, idx) =>
     select.innerHTML += '<option value="' + idx + '">' + station.name + '</option>'
   )
 
-  select.onchange = function(){
+  form.onsubmit = function(e){
+    e.preventDefault()
+
     var value = select.value
     var map = document.getElementById('map')
     var emptySlots = document.getElementById('empty-slots')
@@ -59,7 +62,8 @@ function bikeParser(stations){
     }
 
     var {empty_slots, free_bikes, latitude, longitude} = stations[value]
-    var url = 'https://www.google.com/maps/embed/v1/place?key=' + GOOGLE_MAPS_APP_KEY + '&q=' + latitude + ',' + longitude +'&zoom=18'
+    var url = 'https://www.google.com/maps/embed/v1/directions?key=' + GOOGLE_MAPS_APP_KEY +
+        '&origin=' + latitude + ',' + longitude + '&destination=' + parseDestination() + '&mode=bicycling'
 
     emptySlots.innerHTML = empty_slots
     freeBikes.innerHTML = free_bikes
@@ -84,4 +88,9 @@ function showIcon(icon, captionTxt){
 
   wrapper.innerHTML = image
   wrapper.appendChild(caption)
+}
+
+function parseDestination(){
+  var destination = document.getElementById('destination').value.trim()
+   return destination.split(/\s+/).join('+')
 }

@@ -8,7 +8,7 @@
 <body>
   <div id="info">
     <div id="wrapper">
-      <div id="basic-info">
+      <form id="basic-info">
         <div>
           <label class="label">Station:</label>
           <select id="stations">
@@ -23,7 +23,12 @@
           <label class="label">Amount of free bikes:</label>
           <span id="free-bikes"></span>
         </div>
-      </div>
+        <div>
+          <label class="label">Your destination:</label>
+          <input id="destination" type="text" />
+        </div>
+        <input type="submit" />
+      </form>
       <div id="weather-info">
         <div>
           <label class="label">Temperature:</label>
